@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Noble University Admission Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 400px;
+            background: #fff;
+            padding: 20px;
+            margin: 30px auto;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #E31C25; /* Noble University Red */
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 10px;
+            background-color: #E31C25; /* Noble University Red */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #c01a21; /* Slightly darker red for hover */
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo {
+            max-width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="logo-container">
+        <!-- 'PATH_TO_YOUR_LOGO_IMAGE.png' को अपनी वास्तविक लोगो फ़ाइल के पथ से बदलें -->
+        <img src="PATH_TO_YOUR_LOGO_IMAGE.png" alt="Noble University Logo" class="logo">
+    </div>
+
+    <h2>Admission Form</h2>
+
+    <form onsubmit="return validateForm()">
+
+        <label>Name</label>
+        <input type="text" id="name">
+
+        <label>Date of Birth</label>
+        <input type="date" id="dob">
+
+        <label>Age</label>
+        <input type="number" id="age">
+
+        <label>Gender</label>
+        <select id="gender">
+            <option value="">Select</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+        </select>
+
+        <label>10th Marks (%)</label>
+        <input type="number" id="marks10">
+
+        <label>12th Marks (%)</label>
+        <input type="number" id="marks12">
+
+        <label>School Name</label>
+        <input type="text" id="school">
+
+        <label>Address</label>
+        <textarea id="address"></textarea>
+
+        <label>Mobile Number</label>
+        <input type="text" id="mobile">
+
+        <label>Email</label>
+        <input type="email" id="email">
+
+        <label>Stream</label>
+        <select id="stream">
+            <option value="">Select</option>
+            <option>Science</option>
+            <option>Commerce</option>
+            <option>Arts</option>
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<script>
+    function validateForm() {
+        let fields = [
+            "name", "dob", "age", "gender",
+            "marks10", "marks12", "school",
+            "address", "mobile", "email", "stream"
+        ];
+
+        for (let i = 0; i < fields.length; i++) {
+            let value = document.getElementById(fields[i]).value;
+            if (value === "") {
+                alert("Please fill all fields");
+                return false;
+            }
+        }
+
+        alert("Form submitted successfully!");
+        return true;
+    }
+</script>
+
+</body>
+</html>
